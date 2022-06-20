@@ -80,7 +80,7 @@ select stt,mark from marks order by mark desc;
 alter table subject change column `SubjectName` `SubjectName` nvarchar(255);
 -- câu 6
 
-update  subject set `SubjectName`=concat('<<Day la mon hoc',(select SubjectName subject where SubjectID=1));
+update  subject set `SubjectName`=concat('<<Day la mon hoc', (select SubjectName from subject));
 -- câu 7
 
 alter table students add check (age>15 and age<50);
@@ -92,5 +92,5 @@ delete from Students where studentID=1;
 alter table Students add column `status` bit default 1;
 -- câu 11
 
-update students set status=0;
+update students set status=0 where studentID>0;
 -- câu 12
