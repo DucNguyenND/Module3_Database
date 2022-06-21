@@ -56,10 +56,11 @@ insert into Marks values(8,3,3);
 insert into Marks values(1,3,5);
 insert into Marks values(3,2,4);
 
-insert into Subjects values(1,'SQL');
-insert into Subjects values(2,'JAVA');
-insert into Subjects values(3,'C');
-insert into Subjects values(4,'Visual Basic');
+insert into quanlysinhvien.subject values(1,'SQL');
+insert into quanlysinhvien.subject values
+(2,'JAVA'),
+(3,'C'),
+(4,'Visual Basic');
 
 select * from Students;
 -- Hiển thị tất cả học viên
@@ -67,7 +68,7 @@ select * from Students;
 select * from Subjects;
 -- Hiển thị tất cả các lớp học
 
-Select agv(Mark) as diemTB from marks;
+Select avg(Mark) as `diemTB` from marks;
 -- Câu 3
 
 Select SubjectName from Subject where SubjectID=(Select SubjectID from Marks where Mark=(Select Max(mark) from marks));
