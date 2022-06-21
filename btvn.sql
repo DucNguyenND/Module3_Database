@@ -74,8 +74,8 @@ Select avg(Mark) as `diemTB` from marks;
 Select SubjectName from Subject where SubjectID=(Select SubjectID from Marks where Mark=(Select Max(mark) from marks));
 -- câu 4
 
-select mark,count(mark) from marks group by marks;
-select stt,mark from marks order by mark desc;
+select mark,count(mark) from quanlysinhvien.marks group by mark ;
+select mark from quanlysinhvien.marks order by mark desc;
 -- câu 5
 
 alter table subject change column `SubjectName` `SubjectName` nvarchar(255);
