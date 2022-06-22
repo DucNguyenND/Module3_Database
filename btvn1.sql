@@ -1,39 +1,39 @@
 use btvn1;
 CREATE TABLE NCC (
-    MaNCC INT(4) AUTO_INCREMENT NOT NULL,
-    TenNCC NVARCHAR(50) NOT NULL,
-    DiaChi NVARCHAR(100) NOT NULL,
-    SoDT VARCHAR(10) NOT NULL,
-    MaSoThue NVARCHAR(8) NOT NULL,
+    MaNCC INT(4) AUTO_INCREMENT ,
+    TenNCC NVARCHAR(50) ,
+    DiaChi NVARCHAR(100),
+    SoDT VARCHAR(10),
+    MaSoThue NVARCHAR(8),
     CONSTRAINT pk1 PRIMARY KEY (MaNCC)
 );
     
 CREATE TABLE LoaiDV (
     MaLoaiDV INT(4) AUTO_INCREMENT PRIMARY KEY,
-    TenLoaiDV NVARCHAR(50) NOT NULL
+    TenLoaiDV NVARCHAR(50) 
 );
     
 CREATE TABLE DongXe (
     DongXe NVARCHAR(50) PRIMARY KEY,
-    HangXe NVARCHAR(50) NOT NULL,
-    SoChoNgoi INT(4) NOT NULL
+    HangXe NVARCHAR(50),
+    SoChoNgoi INT(4)
 );
     
 CREATE TABLE MucPhi (
     MaMP INT(4) AUTO_INCREMENT PRIMARY KEY,
-    DonGia DOUBLE NOT NULL,
+    DonGia DOUBLE,
     MoTa TEXT
 );
     
 CREATE TABLE DangKyCungCap (
-    MaDKCC INT(4) AUTO_INCREMENT NOT NULL,
-    MaNcc INT(4) NOT NULL,
-    MaLoaiDv INT(4) NOT NULL,
-    DongX NVARCHAR(50) NOT NULL,
-    MaP INT(4) NOT NULL,
-    NgayBatDauCC DATE NOT NULL,
-    NgayKetThucCC DATE NOT NULL,
-    SoLuongXeDangKy INT(5) NOT NULL,
+    MaDKCC INT(4) AUTO_INCREMENT,
+    MaNcc INT(4) ,
+    MaLoaiDv INT(4) ,
+    DongX NVARCHAR(50) ,
+    MaP INT(4) ,
+    NgayBatDauCC DATE ,
+    NgayKetThucCC DATE ,
+    SoLuongXeDangKy INT(5) ,
     CONSTRAINT pk2 PRIMARY KEY (MaDKCC),
     CONSTRAINT fk1 FOREIGN KEY (MaNcc)
         REFERENCES NCC (MaNCC),
@@ -47,14 +47,14 @@ CREATE TABLE DangKyCungCap (
     
     
     
-	INSERT INTO NCC VALUEs	(null,'VinFast','Hà Nội','0345066663','TTNCN01'),
-							(null,'Mitsubishi','Toàn quốc','0345066669','TTNCN02'),
-							(null,'Ford','TP HCM','0345063172','TTNCN03'),
-                            (null,'Honda','TP HCM','0345063172','TTNCN04'),
-							(null,'Suzuki','Hà Nội','0345063142','TTNCN05'),
-							(null,'Toyota','Hà Nội','0345063342','TTNCN05');
+	INSERT INTO NCC VALUEs	(null,'VinFast','Hà Nội','0324586955','TTNCN01'),
+							(null,'Mitsubishi','Toàn quốc','0365471258','TTNCN02'),
+							(null,'Ford','TP HCM','0975214523','TTNCN03'),
+                            (null,'Honda','TP HCM','0985145863','TTNCN04'),
+							(null,'Suzuki','Hà Nội','0814444444','TTNCN05'),
+							(null,'Toyota','Hà Nội','0985475896','TTNCN05');
                             
-	INSERT INTO LoaiDV VALUES	(null,'Thuê xe đi lại trong vòn 50km'),
+	INSERT INTO LoaiDV VALUES	(null,'Thuê xe đi lại trong vòng 50km'),
 								(NULL,'Thuê xe đi du lịch');
                                 
 
